@@ -1,5 +1,3 @@
-# UNISA My Work
+# UNISA Helper
 
-Vercel-ready app with a server-side UNISA calendar proxy.
-
-Deploy this folder as the project root.
+Independent UNISA workload planner.
