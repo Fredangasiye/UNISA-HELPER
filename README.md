@@ -1,12 +1,18 @@
 # UNISA My Work
 
-Vercel-ready static app + secure UNISA calendar proxy.
+Vercel-ready UNISA taskboard.
 
-## Deploy
-1. Create a new Vercel project from this folder.
-2. Deploy.
-3. The frontend calls `/api/calendar?url=...`.
-4. The proxy only allows official `mymodules.dtls.unisa.ac.za` hosts and does not store the calendar URL/token.
+Includes:
+- ICS upload
+- UNISA calendar URL import through `/api/calendar`
+- mobile-first UI
+- past-date completion/missed choice
+- written vs MCQ classification
+- estimated time and effort
+- deadline countdown
+- progress, streak and completion stats
+- missed-task guidance
+- "How to connect" instructional section
+- independent-service disclaimer
 
-## Important
-The app is an independent planning tool, not an official UNISA service.
+Deploy the contents of this folder to Vercel with `index.html` at the project root and `api/calendar.js` under `/api`.
