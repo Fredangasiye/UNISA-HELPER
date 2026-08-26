@@ -70,6 +70,12 @@ function dueText(t){
   }
   return '<span class="soon">'+esc(t.title)+' is due '+esc(fmtDate(d))+'</span>';
 }
+function sorted(){
+  return [...state.tasks].sort((a,b)=>{
+    const da=dOf(a.start), db=dOf(b.start);
+    return (da?da.getTime():Infinity)-(db?db.getTime():Infinity);
+  });
+}
 function main(){
 const now=new Date(),all=sorted(),open=all.filter(t=>!t.done);
 const today=open.filter(t=>{const d=dOf(t.start);return d&&sameDay(d,now)});
