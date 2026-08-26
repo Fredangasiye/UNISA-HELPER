@@ -122,5 +122,9 @@ if(futureCount){const n=document.createElement('div');n.id='importNotice';n.clas
 function readFile(f){if(!/\.ics$/i.test(f.name)){alert('Please choose your UNISA .ics calendar file.');return}const r=new FileReader();r.onload=()=>{state.tasks=parseICS(r.result);state.lastImport=new Date().toISOString();state.tab='today';save();document.getElementById('importStatus').className='importStatus success';document.getElementById('importStatus').textContent=`Imported ${state.tasks.length} tasks successfully.`;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab==='today'));main();progress()};r.readAsText(f)}
 document.getElementById('reset').onclick=()=>{if(confirm('Clear your imported calendar and progress?')){state={tasks:[],tab:'today',lastImport:null};localStorage.removeItem('unisaTaskboardV3');location.reload()}};if(!state.tasks.length)state.tasks=SEED.map(normalize);const h=new Date().getHours();document.getElementById('greeting').textContent=h<12?'Good morning.':h<18?'Good afternoon.':'Good evening.';main();progress();setInterval(()=>{main()},60000);
 </script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
